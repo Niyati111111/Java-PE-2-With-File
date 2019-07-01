@@ -2,36 +2,21 @@ package com.stackroute.javaexercise2;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 
 public class FactorialTest {
 
-     Factorial factorial;
-
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        System.out.println("Before class");
-
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        System.out.println("After class");
-
-    }
-
+    Factorial factorial;
 
     @Before
     public void setUp() {
-        System.out.println("Before");
+
         factorial = new Factorial();
     }
 
     @After
     public void tearDown() {
-        System.out.println("After");
+
         factorial = null;
     }
 

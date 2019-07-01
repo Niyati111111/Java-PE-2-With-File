@@ -1,30 +1,24 @@
 package com.stackroute.javaexercise2;
 import java.io.*;
-import java.util.Scanner;
+
 public class FileUpperCase {
 
-    public void convertToUpperCase(String inputfile) {
+    public String convertToUpperCase(String inputfile) throws IOException{
 
-        String line = null;
-        try
-        {
-            /* FileReader reads text files in the default encoding */
-            FileReader fileReader = new FileReader(inputfile);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(inputfile));
+        try {
+            StringBuilder stringBuilder = new StringBuilder();
+            String line = bufferedReader.readLine();
 
-            /* always wrap the FileReader in BufferedReader */
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null)
-            {
-                System.out.println(line.toUpperCase());
+            while (line != null) {
+                stringBuilder.append(line);
+                stringBuilder.append("\n");
+                line = bufferedReader.readLine();
             }
-
-            /* always close the file after use */
+            System.out.println(stringBuilder.toString().toUpperCase());
+            return stringBuilder.toString().toUpperCase();
+        } finally {
             bufferedReader.close();
-        }
-        catch(IOException ex)
-        {
-            System.out.println("Error reading file named '" + inputfile + "'");
         }
 
     }
