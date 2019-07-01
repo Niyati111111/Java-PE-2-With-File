@@ -37,7 +37,7 @@ public class ByteArrayTest {
             actualValue=1;
         }
         assertEquals(expectedValue, actualValue);
-        assertNotNull(actualValue);
+        
 
     }
 
